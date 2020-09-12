@@ -6,7 +6,7 @@ library(caret)
 library(pROC)
 library(randomForest)
 # load data set
-credit_data <- read.csv('C:\\Users\\1ia0\\Desktop\\鲸鲲智数-模型实习笔试题\\鲸鲲智数-模型实习笔试_dataset.csv',stringsAsFactors = T)
+credit_data <- read.csv('dataset.csv',stringsAsFactors = T)
 
 # 探索性数据分析
 ## 缺失值分析
