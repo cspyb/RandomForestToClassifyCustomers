@@ -66,13 +66,13 @@ logi_pred <- predict(logi_model, df[-train.ind,],type = 'response')
 roc(is_dpd7~logi_pred,data=df[-train.ind,],plot=T) #AUC=0.6018
 logi_pred[logi_pred<0.5] = 0
 logi_pred[logi_pred>=0.5] = 1
-sum(df[-train.ind,]$is_dpd7 == logi_pred) #准确率：863/1084=79.6%
+sum(df[-train.ind,]$is_dpd7 == logi_pred) #准确率
 table(df[-train.ind,]$is_dpd7, logi_pred) #混淆矩阵
 
 # SVM
 svm_model <- ksvm(is_dpd7~., data = df[train.ind,], type='C-svc', C=0.01, kernel = "vanilladot")
 svm_pred <- predict(svm_model, df[-train.ind,])
-sum(df[-train.ind,]$is_dpd7 == svm_pred) #准确率：862/1084=79.5%
+sum(df[-train.ind,]$is_dpd7 == svm_pred) #准确率
 table(df[-train.ind,]$is_dpd7, svm_pred) #混淆矩阵
 
 ##系数
